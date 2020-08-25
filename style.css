@@ -338,7 +338,7 @@ nav li {
 
 .eco {
     width: 90%;
-    background-image: url(assets/Economic-Development.jpg);
+    background: url(assets/Economic-Development.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -449,7 +449,7 @@ nav li {
 
 .planning {
     width: 90%;
-    background-image: url(assets/Planning-Monitoring.jpg);
+    background: url(assets/Planning-Monitoring.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
