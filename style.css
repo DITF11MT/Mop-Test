@@ -138,7 +138,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 25px;
+    margin: 25px 15px;
     color: snow;
 }
 
