@@ -41,40 +41,55 @@ body {
     list-style-type: disc;
 }
 
-.qusetions {
-    margin: 8px 0;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
+.accordion {
+    width: 100%;
+    margin: 22px 0px;
+    text-align: right;
 }
 
-.qa {
+.accordion:after {
+    display: block;
+    height: 2px;
+    background-color: #ccc;
+    content: " ";
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.accordion .card {
+    margin: 15px 0px;
+    border-radius: 15px;
     color: snow;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.qus {
-    border-radius: 8px;
-    background-color: #C89637;
-    border: 1px solid #444;
+.accordion .card-header h2 a {
+    color: snow;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 100%;
     font-weight: bold;
-    padding: 20px;
-    width: 50%;
-    align-self: center;
-    margin: 25px 0;
+    word-wrap: break-word;
+}
+
+.accordion .dropdown-toggle {
+    white-space: normal;
+}
+
+.accordion .card-header {
+    background-color: #00838F;
+    border-radius: 15px;
+}
+
+.accordion .card-body {
+    border-radius: 15px;
 }
 
 .ans {
-    border-radius: 8px;
-    background-color: #28A5A3;
-    border: 1px solid #444;
+    border-radius: 15px;
     padding: 20px;
-    width: 80%;
-    text-align: right;
-    align-self: center;
+    color: #444;
 }
 
 .ans li {
@@ -543,6 +558,15 @@ nav li {
 .big-img {
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bia:after {
+    display: block;
+    height: 2px;
+    background-color: #ccc;
+    content: " ";
+    width: 100%;
+    margin: 20px 0px;
 }
 
 .units {
