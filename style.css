@@ -235,7 +235,7 @@ body {
 nav {
     width: 100%;
     background-color: #F2F4F9;
-    box-shadow: 2px 2px #eee;
+    box-shadow: 2px 2px #888;
     display: flex;
     justify-content: space-between;
 }
@@ -511,7 +511,7 @@ nav li {
 
 .indi {
     position: relative;
-    background-color: #C89637;
+    background-color: #dee2e6;
     border-radius: 5px;
     box-shadow: 4px 4px #888;
 }
