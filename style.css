@@ -25,13 +25,8 @@ body {
 }
 
 .article {
-    margin: 8px 0;
-    width: 70%;
-    align-self: flex-start;
-}
-
-.article img {
-    width: 100%;
+    margin: 22px 18px;
+    padding: 0px 8px;
 }
 
 .article p {
@@ -97,34 +92,18 @@ body {
     font-weight: bold;
 }
 
-.filler {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-}
-
-.row- {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.filler-row {
-    display: flex;
-    width: 100%;
-    display: flex;
-    margin: 15px;
-    justify-content: space-evenly;
-}
-
-.filler-row img {
-    width: 180px;
+.fillerimg img {
+    width: 80%;
     height: 69px;
     transition: all .3s;
+    margin: 25px 0px;
+    box-shadow: 4px 4px #ccc;
+    border-radius: 4px;
 }
 
-.filler-row img:hover {
-    box-shadow: 0px 4px #ccc;
+.fillerimg img:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
 }
 
 .top-things {
@@ -320,6 +299,62 @@ nav li {
     height: 420px;
 }
 
+.page-title h3 {
+    color: rgb(33, 134, 133);
+    opacity: 1;
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.page-title:after {
+    display: block;
+    height: 2px;
+    background-color: #ccc;
+    content: " ";
+    width: 44%;
+    margin: 20px 0px;
+}
+
+.navilinks {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 00px;
+    color: #444;
+}
+
+.navilinks a {
+    color: #888;
+    font-size: .8em;
+    text-decoration: none;
+    margin: 0px 8px;
+}
+
+.currentpage {
+    font-weight: bold;
+}
+
+.glow {
+    background-color: #C89637;
+    border-right: 1px solid #C89637;
+}
+
+.glow a {
+    color: snow;
+}
+
+.glow .dropdown-menu a {
+    color: #3E474C;
+}
+
+.glow .dropdown-menu a:hover {
+    background-color: #9E7B60;
+    color: snow;
+}
+
 .section h3 {
     color: rgb(33, 134, 133);
     opacity: 1;
@@ -351,24 +386,34 @@ nav li {
 }
 
 .plans {
-    margin: 8px 0;
-    width: 70%;
-    align-self: flex-start;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+}
+
+.plans:after {
+    display: block;
+    height: 2px;
+    background-color: #ccc;
+    content: " ";
+    width: 100%;
+    margin: 20px 0px;
 }
 
 .plan {
-    background-color: #3EC8C6;
+    align-self: center;
+    background-color: rgb(168, 125, 44);
     text-align: center;
-    width: 269px;
-    margin: 10px;
+    margin: 22px 0px;
     opacity: 1;
     color: snow;
     padding-bottom: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .pdf {
@@ -379,34 +424,35 @@ nav li {
 
 .plan img {
     width: 100%;
-    height: 144px;
-    margin-bottom: 10px;
+    height: 150px;
+    margin-bottom: 15px;
+    border-radius: 15px;
 }
 
 .plan h2 {
-    font-size: 1.2em;
+    font-size: 17px;
     font-weight: bold;
-}
-
-.plan p {
-    font-size: .9em;
 }
 
 .plan a {
     text-decoration: none;
-    color: snow;
-    background-color: #C89637;
+    color: #3E474C;
+    background-color: #dee2e6;
     letter-spacing: 1px;
     font-weight: 600;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 6px 20px;
-    width: 69%;
+    width: 80%;
     align-self: center;
     transition: all .3s;
+    display: flex;
+    justify-content: center;
+    box-shadow: 4px 4px #222;
 }
 
 .plan a:hover {
-    background-color: #3EC8C6;
+    background-color: #c3c7cc;
+    cursor: pointer;
 }
 
 .banner {
@@ -492,6 +538,11 @@ nav li {
     font-size: 1.100044em;
     line-height: 1.4;
     padding: 35px;
+}
+
+.big-img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .units {
@@ -760,6 +811,9 @@ select {
 }
 
 @media only screen and (max-width: 769px) {
+    .fillerimg img {
+        width: 100%;
+    }
     .top-things {
         display: none;
     }
@@ -779,9 +833,6 @@ select {
     .maps {
         width: 88%;
     }
-    .article {
-        width: 100%;
-    }
     .sec-item {
         width: 100%;
     }
@@ -800,18 +851,9 @@ select {
         justify-content: center;
         align-items: center;
     }
-    .filler-row a {
-        margin-left: 15px;
-    }
     .plans {
         flex-direction: column;
         width: 100%;
-    }
-    .plan {
-        width: 88%;
-    }
-    .plan img {
-        height: auto;
     }
     .pdf img {
         height: 250px;
