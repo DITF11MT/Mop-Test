@@ -609,6 +609,19 @@ nav li {
     cursor: pointer;
 }
 
+.unit a {
+    padding: 8px 10px;
+    color: snow;
+    background-color: #3E474C;
+    border-radius: 8px;
+    box-shadow: 2px 2px #eee;
+    transition: all .3s;
+}
+
+.unit a:hover {
+    background-color: rgb(22, 23, 24);
+}
+
 .unit h5 {
     font-size: 1.2em;
     color: #3E474C;
@@ -642,6 +655,138 @@ nav li {
     color: snow;
     font-size: 1.2em;
     align-self: center;
+}
+
+.former {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/Flag.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 44px 0px;
+}
+
+.history {
+    text-align: center;
+    color: snow;
+    padding: 22px 0px;
+}
+
+.history-tit {
+    font-size: bold;
+    margin: 15px 0px;
+}
+
+.history-par {
+    letter-spacing: 1px;
+    margin: 44px 5px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.minister {
+    text-align: center;
+    color: snow;
+    margin-bottom: 40px;
+}
+
+.mins-img {
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.69);
+    margin: 10px 0px;
+    transition: all .3s;
+}
+
+.mins-img:hover {
+    transform: scale(1.15);
+}
+
+.mins-date {
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.mins-name {
+    color: snow;
+    margin: 10px 0px;
+}
+
+.servicesguide {
+    height: 300px;
+    width: 300px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: inline-block;
+    border: 15px solid #00838F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0px;
+    transition: all .3s;
+    box-shadow: 2px 2px 2px 2px #888;
+}
+
+.servicesguide:hover {
+    border: 5px solid #C89637;
+    transform: scale(1.13);
+    box-shadow: 4px 4px 4px 4px #666;
+    background-color: #3E474C;
+}
+
+.servicesguide:hover>img {
+    width: 35%;
+}
+
+.servicesguide:hover>h5 {
+    color: snow;
+    font-size: 1.6em;
+    transform: rotateY(360deg);
+    font-weight: bold;
+}
+
+.servicesguide:hover>a {
+    color: #3E474C;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: snow;
+}
+
+.servicesguide img {
+    width: 50%;
+    transition: all .3s;
+}
+
+.servicesguide h5 {
+    font-size: 1.3em;
+    transition: all .3s;
+}
+
+.servicesguide a {
+    color: snow;
+    padding: 6px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: #3E474C;
+    transition: all .3s;
+    box-shadow: 2px 2px #222;
+}
+
+.servicesguide a:hover {
+    padding: 14px 16px;
 }
 
 footer {
@@ -731,8 +876,8 @@ nav .icon {
 /* contact us */
 
 .sec-item {
-    margin: 8px 0;
-    width: 70%;
+    margin: 22px 0;
+    width: 100%;
     align-self: flex-start;
     padding: 10px 0;
     display: flex;
@@ -740,18 +885,29 @@ nav .icon {
 }
 
 .sec-item iframe {
-    width: 850px;
-    height: 400px;
-    align-self: flex-start;
+    width: 100%;
+    height: 450px;
     border: 0;
+    border-radius: 15px;
+    box-shadow: 4px 4px 4px 4px #888;
+    margin-bottom: 44px;
 }
 
 .sec-tit {
-    align-self: flex-start;
-    color: #28a5a3;
-    font-weight: bold;
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    color: rgb(33, 134, 133);
+    opacity: 1;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: right;
+}
+
+.sec-tit:after {
+    display: block;
+    height: 2px;
+    background-color: #888;
+    content: " ";
+    width: 95%;
+    margin-top: 15px;
 }
 
 .contacts {
@@ -765,10 +921,13 @@ nav .icon {
 
 .contact-item h3 {
     font-weight: 300;
+    color: #3E474C;
 }
 
 .contact-item p {
+    direction: ltr;
     font-size: 1.022em;
+    color: #00838F;
 }
 
 
@@ -787,7 +946,7 @@ nav .icon {
 }
 
 .form-item {
-    width: 49%;
+    width: 45%;
     display: flex;
     flex-direction: column;
 }
@@ -803,6 +962,7 @@ select {
     border-radius: 4px;
     resize: none;
     margin-bottom: 14px;
+    box-shadow: 2px 2px #666;
 }
 
 .form-item select {
@@ -824,7 +984,7 @@ select {
     color: #274472;
     border: none;
     margin-top: 20px;
-    box-shadow: 2px 2px #ccc;
+    box-shadow: 2px 2px 2px 2px #666;
     transition: all .3s;
 }
 
@@ -861,7 +1021,7 @@ select {
         width: 100%;
     }
     .sec-item iframe {
-        width: 99%;
+        width: 95%;
     }
     .contacts {
         flex-direction: column;
@@ -881,5 +1041,21 @@ select {
     }
     .pdf img {
         height: 250px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .navilinks a {
+        font-size: .5em;
+    }
+}
+
+@media only screen and (max-width: 592px) {
+    .form-row {
+        flex-direction: column;
+        width: 100%;
+    }
+    .form-item {
+        width: 100% !important;
     }
 }
