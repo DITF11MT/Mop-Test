@@ -128,8 +128,7 @@ body {
 
 .ans li {
     list-style-type: disc;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
+    margin-bottom: 15px;    
 }
 
 .highlight h2 {
@@ -214,7 +213,7 @@ body {
     padding-bottom: 10px;
     background-color: rgba(255, 255, 255, 0.6);
     text-align: right;
-    box-shadow: 2px 2px #444;
+    box-shadow: 4px 4px 6px 0 rgba(32, 33, 36, 0.68);
     border-radius: 5px;
 }
 
@@ -417,7 +416,7 @@ nav li:hover:after {
     display: flex;
     justify-content: space-between;
     border-radius: 15px;
-    box-shadow: 4px 4px #888;
+    box-shadow: 8px 8px 6px 0 rgba(32, 33, 36, 0.69);
 }
 
 .plans {
@@ -720,7 +719,7 @@ nav li:hover:after {
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
-    box-shadow: 4px 4px #ccc;
+    box-shadow: 8px 8px 6px 1px rgba(32, 33, 36, 0.69);
 }
 
 .big-banner {
@@ -784,7 +783,7 @@ nav li:hover:after {
     position: relative;
     background-color: #dee2e6;
     border-radius: 5px;
-    box-shadow: 4px 4px #888;
+    box-shadow: 2px 2px 4px 0 rgba(32, 33, 36, 0.69);
 }
 
 .unit:hover {
