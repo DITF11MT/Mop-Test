@@ -128,7 +128,7 @@ body {
 
 .ans li {
     list-style-type: disc;
-    margin-bottom: 15px;    
+    margin-bottom: 15px;
 }
 
 .highlight h2 {
@@ -213,7 +213,7 @@ body {
     padding-bottom: 10px;
     background-color: rgba(255, 255, 255, 0.6);
     text-align: right;
-    box-shadow: 4px 4px 6px 0 rgba(32, 33, 36, 0.68);
+    box-shadow: 2px 2px 6px 0 rgba(32, 33, 36, 0.44);
     border-radius: 5px;
 }
 
@@ -232,7 +232,7 @@ body {
     color: snow;
     padding: 4px 8px;
     border-radius: 4px;
-    box-shadow: 2px 2px #444;
+    box-shadow: 0 2px 6px 0 rgba(32, 33, 36, 0.69);
     transition: all .2s;
 }
 
@@ -416,7 +416,7 @@ nav li:hover:after {
     display: flex;
     justify-content: space-between;
     border-radius: 15px;
-    box-shadow: 8px 8px 6px 0 rgba(32, 33, 36, 0.69);
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.69);
 }
 
 .plans {
@@ -676,7 +676,7 @@ nav li:hover:after {
     flex-direction: column;
     justify-content: space-between;
     border-radius: 15px;
-    box-shadow: 4px 4px #111;
+    box-shadow: 3px 3px 6px 0 rgba(32, 33, 36, 0.69);
 }
 
 .banner,
@@ -700,7 +700,7 @@ nav li:hover:after {
     background-color: #C89637;
     letter-spacing: 1px;
     border-radius: 5px;
-    box-shadow: 2px 2px #444;
+    box-shadow: 0 3px 6px 0 rgba(32, 33, 36, 0.44);
     padding: 6px 20px;
     font-size: .9em;
     transition: all .3s;
@@ -719,7 +719,7 @@ nav li:hover:after {
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
-    box-shadow: 8px 8px 6px 1px rgba(32, 33, 36, 0.69);
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.88);
 }
 
 .big-banner {
@@ -731,7 +731,7 @@ nav li:hover:after {
     color: snow;
     padding: 18px;
     border-radius: 15px;
-    box-shadow: 2px 4px 4px 2px #222;
+    box-shadow: 3px 3px 4px #444;
 }
 
 .big-banner h1 {
@@ -771,7 +771,7 @@ nav li:hover:after {
 .unit {
     height: 90%;
     padding: 8px;
-    box-shadow: 4px 4px #888;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     margin-bottom: 30px;
     text-align: center;
     border-radius: 15px;
@@ -783,7 +783,7 @@ nav li:hover:after {
     position: relative;
     background-color: #dee2e6;
     border-radius: 5px;
-    box-shadow: 2px 2px 4px 0 rgba(32, 33, 36, 0.69);
+    box-shadow: 0 3px #ccc;
 }
 
 .unit:hover {
@@ -1024,7 +1024,7 @@ footer a:hover {
     width: 88%;
     align-self: flex-end;
     border-radius: 15px;
-    box-shadow: 4px 4px #444;
+    box-shadow: 2px 2px 6px 0 rgba(32, 33, 36, 0.69);
 }
 
 footer h2 {
