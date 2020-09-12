@@ -157,9 +157,11 @@ body {
 
 .top-things {
     display: flex;
-    flex-direction: column-reverse;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 0px 10px;
+}
+
+.es {
+    display: none;
 }
 
 .eservices {
@@ -167,13 +169,24 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 25px 15px;
     color: snow;
+    font-size: .88em;
 }
 
 .eservices a {
     color: snow;
     text-decoration: none;
+    margin-left: 4px;
+}
+
+.eservices a:after {
+    margin-right: 4px;
+    content: "/";
+    color: snow;
+}
+
+.na:after {
+    content: " " !important;
 }
 
 .eservices a:hover {
@@ -183,17 +196,6 @@ body {
 
 .eservices h4 {
     font-size: 1.1em;
-}
-
-.socials {
-    width: 44%;
-    display: flex;
-    justify-content: space-around;
-    align-self: flex-end;
-    align-items: center;
-    list-style: none;
-    color: #E1E1E1;
-    font-size: 1.3em;
 }
 
 .fb:hover {
@@ -1050,11 +1052,34 @@ footer h2 {
     padding: 10px 0;
 }
 
-.copyright {
+.cr {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
     background-color: #006973;
     text-align: center;
     font-size: .88em;
     padding: 14px;
+    color: snow;
+    margin: 0;
+    font-weight: bold;
+}
+
+.socials {
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
+    align-items: center;
+    list-style: none;
+    color: #E1E1E1;
+    font-size: 1.3em;
+}
+
+.copyright {
+    text-align: center;
+    font-size: .88em;
     color: snow;
     margin: 0;
     font-weight: bold;
@@ -1154,18 +1179,25 @@ nav .icon {
     flex-direction: column;
 }
 
+.form-item-3 {
+    width: 30%;
+}
+
 .form-item input[type=text],
 textarea,
-select {
+select,
+input[type=email],
+input[type=date] {
     width: 100%;
     border: 1px solid #dee0e5;
     background: #fafbfd;
-    direction: ltr;
+    direction: rtl;
     padding: 8px 10px;
+    outline: none;
     border-radius: 4px;
     resize: none;
     margin-bottom: 14px;
-    box-shadow: 2px 2px #666;
+    box-shadow: 0 1px 2px 0 rgba(32, 33, 36, 0.22);
 }
 
 .form-item select {
@@ -1179,6 +1211,10 @@ select {
     color: #333;
 }
 
+.form-item span {
+    color: red;
+}
+
 .form-item input[type=submit] {
     width: 18%;
     padding: 10px 20px;
@@ -1187,7 +1223,7 @@ select {
     color: #274472;
     border: none;
     margin-top: 20px;
-    box-shadow: 2px 2px 2px 2px #666;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     transition: all .3s;
 }
 
@@ -1197,9 +1233,61 @@ select {
     cursor: pointer;
 }
 
+
+/* 
+loader
+*/
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    z-index: 9999;
+    background-color: snow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.loader {
+    border: 16px solid #ccc;
+    border-radius: 50%;
+    border-top: 16px solid #3EC8C6;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @media only screen and (max-width:992px) {
     .news-card img {
         height: 100%;
+    }
+    .es {
+        display: block;
+    }
+    nav li:hover:after {
+        width: 100%;
+    }
+    .top-things {
+        display: none;
+    }
+    .main-header {
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -1213,13 +1301,6 @@ select {
     }
     .fillerimg img {
         width: 100%;
-    }
-    .top-things {
-        display: none;
-    }
-    .main-header {
-        justify-content: center;
-        align-items: center;
     }
     .info {
         display: none;
@@ -1257,6 +1338,17 @@ select {
     }
     .pdf img {
         height: 250px;
+    }
+    .cr {
+        flex-direction: column-reverse;
+    }
+    .socials {
+        margin-top: 15px;
+        width: 25%;
+        align-self: center;
+    }
+    .slide-show img {
+        height: 237px;
     }
 }
 

@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <link rel="shortcut icon" href="https://www.mop.gov.jo/App_Themes/ThemeAr/Images/fav.png" />
     <title>
-        تواصل معنا - وزارة التخطيط والتعاون الدولي
+        الصفحة الرئيسية - وزارة التخطيط والتعاون الدولي
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Tajawal&amp;display=swap" rel="stylesheet">
@@ -19,7 +19,13 @@
 </head>
 
 <body>
+
+    <!-- overlay loader -->
     <div class="fluid-container">
+        <!-- <div id="overlay">
+            يرجى الانتظار...
+            <div class="loader"></div>
+        </div> -->
         <header>
             <div class="main-header">
                 <div class="logo">
@@ -32,20 +38,19 @@
                 <div class="top-things">
                     <div class="eservices">
                         <h4>
-                            <a href="#">بريد الموظفين</a>
-                        </h4>/
+                            <a href="trainstudents.html">تدريب طلاب الجامعات</a>
+                        </h4>
                         <h4>
-                            <a href="#">العطائات</a>
-                        </h4>/
+                            <a href="#"> المنح الدراسية و الدورات </a>
+                        </h4>
                         <h4>
-                            <a href="#">منصة بخدمتك</a>
+                            <a href="#">مركز المعرفة</a>
+                        </h4>
+                        <h4>
+                            <a class="na" href="#">  الجريدة الالكترونية</a>
                         </h4>
                     </div>
-                    <div class="socials">
-                        <li class='yt'><i class="fab fa-youtube"></i></li>
-                        <li class="tw"><i class="fab fa-twitter"></i></li>
-                        <li class="fb"><i class="fab fa-facebook-f"></i></li>
-                    </div>
+
                 </div>
             </div>
 
@@ -60,8 +65,20 @@
                 </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav" style="width: 100%;">
-                    <li class="nav-item dropdown link-item ">
+                <ul class="navbar-nav" style="width: 100%; padding: 0;">
+                    <li class="nav-item dropdown es link-item">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            الخدمات الالكترونية</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">تدريب طلاب الجامعات</a>
+                            <a class="dropdown-item" href="#">المنح الدراسية و الدورات</a>
+                            <a class="dropdown-item" href="#">مركز المعرفة</a>
+                            <a class="dropdown-item" href="#">الجريدة الالكترونية</a>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown link-item">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      عن الوزارة
                   </a>
@@ -74,13 +91,13 @@
                             <a class="dropdown-item" href="ministers.html">	الوزراء السابقين </a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown link-item ">
+                    <li class="nav-item dropdown link-item">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             التخطيط و المتابعة                      </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="strategicalplan.html">الخطة الاستراتيجية</a>
                             <a class="dropdown-item" href="annualreports.html"> التقارير السنوية</a>
-                            <a class="dropdown-item" href="#"> تطوير الأداء المؤوسسي </a>
+                            <a class="dropdown-item" href="performancedevelopment.html"> تطوير الأداء المؤوسسي </a>
                             <a class="dropdown-item" href="servicesguide.html"> دليل الخدمات </a>
                             <a class="dropdown-item" href="nationalgoals.html"> الأهداف الوطنية </a>
                         </div>
@@ -98,7 +115,8 @@
                             <a class="dropdown-item" href="gallery.html"> المعرض</a>
                         </div>
                     </li>
-                    <li class="nav-item link-item ">
+
+                    <li class="nav-item link-item">
                         <a class="nav-link" href="contactus.html">تواصل معنا</a>
                     </li>
                 </ul>
@@ -109,7 +127,7 @@
         <div class="container">
             <div class="page-title">
                 <h3>
-                    تواصل معنا
+                    خدمات الكترونية
                 </h3>
                 <div class="navilinks">
                     <h4>
@@ -119,80 +137,68 @@
                     </h4>/
                     <h4>
                         <a href="#" class="currentpage">
-                            تواصل معنا
+                             تدريب الطلاب
                         </a>
                     </h4>
                 </div>
             </div>
         </div>
-        <!-- end of page title -->
         <section style="background-color: #F2F4F9;">
             <div class="container">
                 <div class="row bia">
                     <div class="sec-item">
-                        <h2 class="sec-tit">مقر الوزارة</h2>
-                        <iframe scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.9553000463607!2d35.90548681464221!3d31.954757232761644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca07c65529b9f%3A0x39274bf436bd42d!2sMinistry%20of%20Planning%20%26%20International%20Cooperation!5e1!3m2!1sen!2sus!4v1579017229331!5m2!1sen!2sus"></iframe>
-                        <h2 class="sec-tit">معلومات الاتصال
-                        </h2>
-                        <div class="contacts">
-                            <div class="contact-item">
-                                <h3>
-                                    العنوان
-                                </h3>
-                                <p>
-                                    عمان,الدوار الثالث ،شارع توفيق أبو الهدى، مبنى رقم (4)
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <h3>
-                                    هاتف
-                                </h3>
-                                <p>
-                                    +962 6546 44466
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <h3>
-                                    فاكس
-                                </h3>
-                                <p>
-                                    +962 2646 4934
-                                </p>
-                            </div>
-                        </div>
                         <div class="contact-form">
-                            <h2 class="sec-tit">راسلنا</h2>
-                            <form action="contactus.php" method="GET">
+                            <h2 class="sec-tit">تعبئة طلب تدريب لطلاب الجامعات</h2>
+                            <form action="trainstudents.php" method="POST">
                                 <div class="form-row">
-                                    <div class="form-item">
-                                        <label for="fname">الاسم الاول*</label>
-                                        <input type="text" id="fname" name="fname">
+                                    <div class="form-item form-item-3">
+                                        <label for="nationality">الجنسية <span>*</span></label>
+                                        <select id="nationality" required name="nationality">
+                                            <option disabled value="اختر">اختر</option>
+                                            <option value="اردني">اردني</option>
+                                            </select>
                                     </div>
-                                    <div class="form-item">
-                                        <label for="sname">الاسم الثاني*</label>
-                                        <input type="text" id="sname" name="sname">
+                                    <div class="form-item form-item-3">
+                                        <label for="nationalid">الرقم الوطني <span>*</span></label>
+                                        <input type="text" id="nationalid" required name="nationalid">
+                                    </div>
+                                    <div class="form-item form-item-3">
+                                        <label for="date">تاريخ الميلاد <span>*</span></label>
+                                        <input type="date" id="date" required name="date">
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-item">
-                                        <label for="email">البريد الإلكتروني*</label>
-                                        <input type="email" id="email" name="email">
+                                    <div class="form-item form-item-3">
+                                        <label for="fname">الاسم الاول <span>*</span></label>
+                                        <input type="text" id="fname" required name="fname">
                                     </div>
-                                    <div class="form-item">
-                                        <label for="phone">رقم الهاتف</label>
-                                        <input type="text" id="phone" name="phone">
+                                    <div class="form-item form-item-3">
+                                        <label for="sname">الاسم الثاني <span>*</span></label>
+                                        <input type="text" id="sname" required name="sname">
+                                    </div>
+                                    <div class="form-item form-item-3">
+                                        <label for="city">المحافظة <span>*</span></label>
+                                        <select required name="city">
+                                            <option value="" disabled="" selected="">اسم المحافظة</option>
+                                            <option value="اربد">اربد	</option>
+                                            <option value="عمان">عمان	</option>
+                                            <option value="عجلون">عجلون	</option>
+                                            <option value="مادبا">مادبا	</option>
+                                            <option value="جرش">جرش	</option>
+                                            <option value="البلقاء">البلقاء	</option>
+                                            <option value="المفرق">المفرق	</option>
+                                            <option value="الزرقاء">الزرقاء	</option>										
+                                            <option value="الكرك">الكرك	</option>
+                                            <option value="الطفيلة">الطفيلة	</option>
+                                            <option value="معان">معان	</option>
+                                            <option value="العقبة">العقبة	</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-item" style="width: 100%;">
-                                        <label for="place">العنوان</label>
-                                        <input type="text" id="place" name="place">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-item" style="width: 38%;">
-                                        <label for="city">المحافظة</label>
-                                        <select name="city">
+                                    <div class="form-item form-item-3">
+                                        <label for="university">الجامعة <span>*</span></label>
+                                        <select required name="university">
                                             <option value="" disabled="" selected="">اسم المحافظة</option>
                                             <option value="اربد">اربد	</option>
                                             <option value="عمان">عمان	</option>
@@ -207,30 +213,28 @@
                                             <option value="معان">معان	</option>
                                             <option value="العقبة">العقبة	</option>
                                         </select> </div>
-                                    <div class="form-item" style="width: 38%;">
-                                        <label for="village">الحي / القرية</label>
-                                        <input type="text" id="village" name="village">
+                                    <div class="form-item form-item-3">
+                                        <label for="year">السنة <span>*</span></label>
+                                        <input type="text" id="year" required name="year">
                                     </div>
-                                    <div class="form-item" style="width: 18%;">
-                                        <label for="postal">الرمز البريدي*</label>
-                                        <input type="text" id="postal" name="postal">
+                                    <div class="form-item form-item-3">
+                                        <label for="major">التخصص<span>*</span></label>
+                                        <input type="text" id="major" required name="major">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item">
+                                        <label for="email">البريد الإلكتروني<span>*</span></label>
+                                        <input type="email" required id="email" name="email">
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="phone">رقم الهاتف <span>*</span></label>
+                                        <input type="text" required id="phone" name="phone">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-item" style="width: 100%;">
-                                        <label for="topic">الموضوع</label>
-                                        <input type="text" id="topic" name="topic">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-item" style="width: 100%;">
-                                        <label for="message">الرسالة</label>
-                                        <textarea name="message" id="message" rows="10"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-item" style="width: 100%;">
-                                        <input type="submit" value="إرسال">
+                                        <input type="submit" value="تقديم">
                                     </div>
                                 </div>
                             </form>
@@ -238,46 +242,10 @@
                     </div>
 
                 </div>
-                <div class="row">
-                    <div class="col fillerimg">
-                        <a href="#">
-                            <img src="assets/filler1.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col fillerimg">
-                        <a href="#">
-                            <img src="assets/filler2.jpg" alt="">
-                        </a>
-                    </div>
-
-                    <div class="col fillerimg">
-                        <a href="#">
-                            <img src="assets/filler3.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col fillerimg">
-                        <a href="#">
-                            <img src="assets/filler4.png" alt="">
-                        </a>
-                    </div>
-                    <div class="col fillerimg">
-                        <a href="#">
-                            <img src="assets/filler5.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col fillerimg">
-                        <a href="#">
-                            <img src="assets/filler6.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
                 <!-- end of filler row -->
             </div>
     </div>
     </section>
-    <!-- end of units and departments section -->
     <footer>
         <div class="maps">
             <h2>
@@ -294,9 +262,7 @@
                 <h4><a href="tel:(+962)65464934"> +962 6546 4934</a>:فاكس </h4>
                 <h4 style="text-align: right;">
                     العنوان:
-                    <a href="#">
-                         عمان,الدوار الثالث ،شارع توفيق أبو الهدى، مبنى رقم (4)
-                        </a>
+                    <a href="#"> عمان,الدوار الثالث ،شارع توفيق أبو الهدى، مبنى رقم (4)</a>
                 </h4>
             </div>
         </div>
@@ -319,12 +285,21 @@
             </div>
         </div>
     </footer>
-    <h4 class="copyright">.جميع الحقوق محفوظة © 2020 وزارة التخطيط والتعاون الدولي
-    </h4>
+    <div class="cr">
+        <div class="socials">
+            <li class='yt'><i class="fab fa-youtube"></i></li>
+            <li class="tw"><i class="fab fa-twitter"></i></li>
+            <li class="fb"><i class="fab fa-facebook-f"></i></li>
+        </div>
+        <h4 class="copyright">جميع الحقوق محفوظة © 2020 وزارة التخطيط والتعاون الدولي.
+        </h4>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
+<!-- 420 lines -->
