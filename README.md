@@ -1,2 +1,0 @@
-# Mop-Test
-Testing Purposes 

@@ -1,0 +1,63 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#">
+                            {{page}}
+                            {{!-- عن الوزارة --}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+<section style="background-color: #F2F4F9;">
+            <div class="container">
+
+                <div class="row">
+                    <div class="accordion" id="accordionExample">
+                        {{#if listExists}} 
+  
+                            {{#each faq}}                            
+                        <div class="card">
+                            <div class="card-header" id="heading{{answer_bs}}">
+                                <h2 class="mb-0 ">
+                                    <a class="btn btn-link dropdown-toggle" type="button" data-toggle="collapse" data-target="#collapse{{answer_bs}}" aria-expanded="true" aria-controls="collapse{{answer_bs}}">
+                                        {{question_tit}} 
+                                    </a>
+                                </h2>
+                            </div>
+
+                            <div id="collapse{{answer_bs}}" class="collapse" aria-labelledby="heading{{answer_bs}}" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="ans">
+                                        {{{answer_txt}}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+  
+                            {{/if}}
+
+                    </div>
+                </div>
+        
+        {{>fillerRow}}
+        </div>
+        </section>

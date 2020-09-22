@@ -1,0 +1,69 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#">
+                            {{page}}
+                            {{!-- عن الوزارة --}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+
+<section style="background-color: #FFF;">
+            <div class="container">
+                <div class="row">
+                  
+{{#if listExists}} 
+  
+    {{#each news}}
+    
+      <div class="plans naf">
+                        <div class="col">
+                            <a href="#" style="text-decoration: none; cursor: pointer;">
+                                <div class="news-card">
+                                    <img src="news{{news_id}}.jpg" alt="news">
+                                    <div class="news-in-card">
+                                        <span>
+                                            {{this.news_date}}
+                                        </span>
+                                        <h2>
+                                            {{this.news_tit}}
+                                        </h2>
+                                        <p>
+                                            {{this.news_info}}
+                                        </p>
+                                        <a href="#" class="ac">
+                                            اقرأ المزيد
+                                        </a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>     
+    {{/each}}
+  
+{{/if}}
+
+                </div>
+                <!-- end of news  -->
+            </div>
+            </div>
+        </section>

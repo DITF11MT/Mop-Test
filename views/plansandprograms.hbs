@@ -1,0 +1,52 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#">
+                            {{page}}
+                            {{!-- عن الوزارة --}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+<section style="background-color: #FFF;">
+            <div class="container">
+                <div class="row">
+                    <div class="plans">
+                        {{#if listExists}} 
+  
+                          {{#each programs}}
+    
+                        <div class="col-xs-8 col-sm-6 col-lg-3">
+                            <div class="plan">
+                                <img src="{{file_cat}}.png" alt="program">
+                                <h2>{{file_name}} {{file_date}}</h2>
+                                <a href="{{file_url}}">تحميل</a>
+                            </div>
+                        </div>
+                     {{/each}}
+  
+                {{/if}}
+   
+                    </div>
+                </div>
+ 
+                {{>fillerRow}}
+            </div>
+        </section>

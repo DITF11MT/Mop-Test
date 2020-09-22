@@ -1,0 +1,51 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#">
+                            {{page}}
+                            {{!-- عن الوزارة --}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+    <section style="background-color: #F2F4F9;">
+            <div class="container">
+                <div class="row bia">
+                    <div class="article">
+                        <p>
+                            تساهم الوزارة من خالل أدائها لمهامها في تحقيق األهداف الوطنية الثمانية وكما وردت في وثيقة الأردن 2025 وهي:
+                        </p>
+                      <ul>
+                          {{#if listExists}}
+                            {{#each goals}}
+                          <li>
+                                <p>
+                                {{goal_txt}}       
+                                </p>
+                            </li>
+                            {{/each}}
+                        {{/if}}
+                      </ul>
+                    </div>
+                </div>
+                {{>fillerRow}}
+            </div>
+        </section>

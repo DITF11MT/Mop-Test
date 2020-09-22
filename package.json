@@ -1,0 +1,26 @@
+{
+  "name": "Mop-Test",
+  "version": "1.0.0",
+  "description": "Testing Purposes",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talhaalshafeai44/Mop-Test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talhaalshafeai44/Mop-Test/issues"
+  },
+  "homepage": "https://github.com/talhaalshafeai44/Mop-Test#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-slash": "^2.0.1",
+    "mysql": "^2.18.1"
+  }
+}
