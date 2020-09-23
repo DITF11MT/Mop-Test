@@ -1,0 +1,47 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/                    
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+    <section style="background-color: #F2F4F9;">
+            <div class="container">
+                <div class="row bia">
+                    <div class="article">
+                        <p>
+                            قائمة الروابط:
+                        </p>
+                      <ul>
+                          {{#if listExists}}
+                            {{#each links}}
+                          <li>
+                              <a href="{{link_url}}">
+                                <p>
+                                {{link_tit}}       
+                                </p>
+                              </a>
+                            </li>
+                            {{/each}}
+                        {{/if}}
+                      </ul>
+                    </div>
+                </div>
+                {{>fillerRow}}
+            </div>
+        </section>

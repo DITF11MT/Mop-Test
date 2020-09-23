@@ -9,13 +9,7 @@
                             {{!-- الرئيسية --}}
                             {{parent}}
                         </a>
-                    </h4>/
-                    <h4>
-                        <a href="#">
-                            {{page}}
-                            {{!-- عن الوزارة --}}
-                        </a>
-                    </h4>/
+                    </h4>/                    
                     <h4>
                         <a href="#" class="currentpage">
                             {{title}}
@@ -28,16 +22,20 @@
 <section style="background-color: #FFF;">
             <div class="container">
                 <div class="row">
-                    <div class="plans">
+                    <div class="plans naf">
                         {{#if listExists}} 
   
-                          {{#each programs}}
+                          {{#each projects}}
     
-                        <div class="col-xs-8 col-sm-6 col-lg-3">
-                            <div class="plan">
-                                <img src="{{file_ext}}.png" alt="program">
-                                <h2>{{file_name}} {{file_date}}</h2>
-                                <a href="{{file_url}}">تحميل</a>
+                        <div class="col-xs-12 col-sm-12 col-lg-6">
+                            <div class="news p">
+                                <img src="{{project_pic_url}}" alt="{{project_tit}}">
+                                <h2>
+                                    {{project_tit}}
+                                </h2>
+                                <a href="#">
+                                    المزيد
+                                </a>
                             </div>
                         </div>
                      {{/each}}

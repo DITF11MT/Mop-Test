@@ -1,0 +1,49 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{page}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/                    
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        {{>formModal}}
+ <section style="background-color: #F2F4F9;">
+            <div class="container">
+                <div class="row bia">
+                    <div class="sec-item">
+                        <div class="contact-form">
+                            <h2 class="sec-tit">التسجيل في الجريدة الالكترونية</h2>
+                            <form id="idForm" action="/newsletter" method="POST">
+                                <div class="form-row">
+                                    <div class="form-item" style="width: 100%;">
+                                        <label for="email">البريد الإلكتروني<span>*</span></label>
+                                        <input type="email" required id="email" name="email">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item" style="width: 100%;">
+                                        <input type="submit" value="تسجيل">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end of filler row -->
+            </div>
+    </div>
+    </section>

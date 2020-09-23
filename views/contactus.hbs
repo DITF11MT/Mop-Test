@@ -1,0 +1,131 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/                    
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+<section style="background-color: #F2F4F9;">
+            <div class="container">
+                <div class="row bia">
+                    <div class="sec-item">
+                        <h2 class="sec-tit">مقر الوزارة</h2>
+                        <iframe scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.9553000463607!2d35.90548681464221!3d31.954757232761644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca07c65529b9f%3A0x39274bf436bd42d!2sMinistry%20of%20Planning%20%26%20International%20Cooperation!5e1!3m2!1sen!2sus!4v1579017229331!5m2!1sen!2sus"></iframe>
+                        <h2 class="sec-tit">معلومات الاتصال
+                        </h2>
+                        <div class="contacts">
+                            <div class="contact-item">
+                                <h3>
+                                    العنوان
+                                </h3>
+                                <p>
+                                    عمان,الدوار الثالث ،شارع توفيق أبو الهدى، مبنى رقم (4)
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>
+                                    هاتف
+                                </h3>
+                                <p>
+                                    +962 6546 44466
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>
+                                    فاكس
+                                </h3>
+                                <p>
+                                    +962 2646 4934
+                                </p>
+                            </div>
+                        </div>
+                        {{>formModal}}
+                        <div class="contact-form">
+                            <h2 class="sec-tit">راسلنا</h2>
+                            <form action="/contactus" id="idForm" method="POST">
+                                <div class="form-row">
+                                    <div class="form-item">
+                                        <label for="fname">الاسم الاول*</label>
+                                        <input type="text" name="fname" required id="fname">
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="lname">الاسم العائلة*</label>
+                                        <input type="text" id="sname" required name="lname">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item">
+                                        <label for="email">البريد الإلكتروني*</label>
+                                        <input type="text" id="email" required name="email">
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="phone">رقم الهاتف</label>
+                                        <input type="text" id="phone" required name="phone">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item" style="width: 100%;">
+                                        <label for="address">العنوان</label>
+                                        <input type="text" id="address" required name="address">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item" style="width: 38%;">
+                                        <label for="city">المحافظة</label>
+                                        <select name="city" required>
+                                            <option value="" disabled="" selected="">اسم المحافظة</option>
+                                            {{#if listExists}}
+                                                {{#each cities}}
+                                            <option value="{{city_id}}">{{city}}</option>
+                                                {{/each}}
+                                            {{/if}}
+                                        </select> </div>
+                                    <div class="form-item" style="width: 38%;">
+                                        <label for="village">الحي / القرية</label>
+                                        <input type="text" id="village" required name="village">
+                                    </div>
+                                    <div class="form-item" style="width: 18%;">
+                                        <label for="postal">الرمز البريدي*</label>
+                                        <input type="text" id="postal" required name="postal">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item" style="width: 100%;">
+                                        <label for="topic">الموضوع</label>
+                                        <input type="text" id="topic" required name="topic">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item" style="width: 100%;">
+                                        <label for="message">الرسالة</label>
+                                        <textarea name="message" id="message" required rows="10"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item" style="width: 100%;">
+                                        <input type="submit" value="إرسال">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+        {{>fillerRow}}
+        </div>
+        </section>

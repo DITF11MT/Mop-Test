@@ -1,0 +1,119 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{page}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/                    
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        {{>formModal}}
+
+        <section style="background-color: #F2F4F9;">
+            <div class="container">
+                <div class="row bia">
+                    <div class="sec-item">
+                        <div class="contact-form">
+                            <h2 class="sec-tit">
+                                تقديم للمنح الدراسية
+                            </h2>
+                            <form action="/scholarship" id="idForm" method="POST">
+                                <div class="form-row">
+                                    <div class="form-item form-item-3">
+                                        <label for="fname">الاسم الاول <span>*</span></label>
+                                        <input type="text" id="fname" required name="fname">
+                                    </div>
+                                    <div class="form-item form-item-3">
+                                        <label for="sname">الاسم الثاني <span>*</span></label>
+                                        <input type="text" id="sname" required name="sname">
+                                    </div>
+                                    <div class="form-item form-item-3">
+                                        <label for="lname">اسم العائلة <span>*</span></label>
+                                        <input type="text" id="lname" required name="lname">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item form-item-3">
+                                        <label for="nationality">الجنسية <span>*</span></label>
+                                        <select id="nationality" required name="nationality">
+                                            <option disabled value="اختر">اختر</option>
+                                            {{#if listExists}}
+                                                {{#each nats}}
+                                            <option value="{{nat_id}}">{{nationality}}</option>
+                                                {{/each}}
+                                            {{/if}}
+                                            </select>
+                                    </div>
+                                    <div class="form-item form-item-3">
+                                        <label for="nationalno">الرقم الوطني <span>*</span></label>
+                                        <input type="text" id="nationalno" required name="nationalno">
+                                    </div>
+                                    <div class="form-item form-item-3">
+                                        <label for="birth_day">تاريخ الميلاد <span>*</span></label>
+                                        <input type="date" id="birth_day" required name="birth_day">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-item form-item-3">
+                                        <label for="scholarship">المنحة <span>*</span></label>
+                                        <select required name="scholarship">
+                                            <option value="" disabled="" selected="">اختار المنحة </option>
+                                            {{#if listExists}}
+                                                {{#each schr}}
+                                            <option value="{{scholar_id}}">{{scholarship}}</option>
+                                                {{/each}}
+                                            {{/if}}
+                                        </select> </div>
+                                    <div class="form-item form-item-3">
+                                        <label for="degree">المؤهل العلمي <span>*</span></label>
+                                        <select required name="degree">
+                                            <option value="" disabled="" selected="">اختار المؤهل </option>
+                                            {{#if listExists}}
+                                                {{#each deg}}
+                                            <option value="{{degree_id}}">{{degree}}</option>
+                                                {{/each}}
+                                            {{/if}}
+                                        </select>
+                                    </div>
+                                    <div class="form-item form-item-3">
+                                        <label for="major">التخصص<span>*</span></label>
+                                        <input type="text" id="major" required name="major">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item">
+                                        <label for="email">البريد الإلكتروني<span>*</span></label>
+                                        <input type="email" required id="email" name="email">
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="phone">رقم الهاتف <span>*</span></label>
+                                        <input type="text" required id="phone" name="phone">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-item" style="width: 100%;">
+                                        <input type="submit" value="تقديم">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end of filler row -->
+            </div>
+    </div>
+    </section>

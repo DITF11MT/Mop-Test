@@ -27,19 +27,33 @@
         </div>
 <section style="background-color: #FFF;">
             <div class="container">
-                <div class="row bia" style="text-align: center;">
-                    {{#if listExists}}
-                        {{#each serGui}}
-                    <div class="col c">
-                        <div class="servicesguide">
-                            <img src="{{file_ext}}.png" alt="servicesguide">
-                            <h5>{{file_name}}</h5>
-                            <a href="{{file_url}}">تحميل</a>
+                <div class="row">
+                    <div class="plans">
+                        {{#if listExists}} 
+  
+                          {{#each media}}
+    
+                       <div class="col-xs-8 col-sm-6 col-lg-4">
+                            <a href="#">
+                                <div class="news">
+                                    <img src="{{media_pic}}" alt="{{media_tit}}">
+                                    <h2>
+                                        {{media_tit}}
+                                    </h2>
+                                    <p>
+                                        {{media_txt}}
+                                    </p>
+                                    <a href="#">عرض الألبوم</a>
+                                </div>
+                            </a>
                         </div>
+                     {{/each}}
+  
+                {{/if}}
+   
                     </div>
-            {{/each}}
-            {{/if}}
                 </div>
-            {{>fillerRow}}
-                </div>
-                </section>
+ 
+                {{>fillerRow}}
+            </div>
+        </section>

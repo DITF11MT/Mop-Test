@@ -15,6 +15,7 @@ $(document).ready(function() {
         console.log('Here ');
         var form = document.getElementById('idForm');
         const data = new URLSearchParams();
+        var modalTitle = document.getElementById('modalTitle');
         for (const pair of new FormData(form)) {
             data.append(pair[0], pair[1]);
         }
@@ -26,10 +27,10 @@ $(document).ready(function() {
                 console.log(data);
                 if (data.status == 200) {
                     console.log('200 Ya mAN!');
+                    modalTitle.innerText = 'تم ارسال طلبك بنجاح!';
                     $("#myModal").modal('show');
                     $("#idForm").trigger("reset");
                 } else {
-                    var modalTitle = document.getElementById('modalTitle');
                     modalTitle.innerText = 'حدث خطأ ما! اعد ارسال طلبك.';
                     $("#myModal").modal('show');
                     console.log('not 200 ya karate!');
