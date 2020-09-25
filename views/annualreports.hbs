@@ -1,0 +1,63 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#">
+                            {{page}}
+                            {{!-- عن الوزارة --}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+<section style="background-color: #F2F4F9;">
+            <div class="container">
+                                            
+                        <div id="carouselExampleSlidesOnly" style="padding: 35px 0px;" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators indi">
+
+                        {{#each ir}}                                
+                        <li data-target="#carouselExampleSlidesOnly" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>                            
+                            {{/each}}                        
+
+                    </ol>
+                    
+                    <div class="carousel-inner">
+                        {{#each ir}}
+                            <div class="carousel-item {{#if @first}}active{{/if}}">
+                            <div class="row">
+                                {{#each [units]}}
+                                    <div class="col-3">
+                                    <div class="unit">
+                                        <img src="{{this.file_ext}}.png" alt="program">
+                                <h5>{{file_name}} {{this.file_date}}</h5>
+                                <a href="{{this.file_url}}">تحميل</a>
+                                    </div>
+                                </div>                                
+                                                                                                    
+                                {{/each}}    
+                                </div>
+                            </div>
+                        {{/each}}
+                            
+                    </div>
+                </div>        
+            </div>
+        </section>
+
+

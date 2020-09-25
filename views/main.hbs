@@ -1,3 +1,40 @@
 
 {{>slideShow}}
 {{>mainPageSections}}
+
+
+<section class="section">
+            <h3>جهات تابعة للوزارة أو تحت إشرافها</h3>
+            <!-- slider for units -->
+            <div class="container">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators indi">
+                    {{#each ir}}                                
+                        <li data-target="#carouselExampleSlidesOnly" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>                            
+                            {{/each}}                        
+
+                    </ol>
+                    <div class="carousel-inner">
+                        {{#each ir}}
+                        <div class="carousel-item {{#if @first}}active{{/if}}">
+                            <div class="row">
+                                {{#each [units]}}
+                                <div class="col-3">
+                                    <a href="#" class="unita">
+                                        <div class="unit">
+                                            <img src="crown.png" alt="">
+                                            <h5> {{this.unit_name}}</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                {{/each}}    
+                            </div>
+                        </div>
+                        {{/each}}
+
+                    </div>
+                </div>
+                <!-- end of slider for units -->
+            </div>
+        </section>
+        

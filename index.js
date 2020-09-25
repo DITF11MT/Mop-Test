@@ -40,7 +40,7 @@ app.use(express.static('files'));
 app.engine('hbs', handlebars({
     layoutsDir: __dirname + '/views/layouts',
     extname: 'hbs',
-    //new configuration parameter 
+    //new configuration parameter     
     defaultLayout: 'index',
     partialsDir: __dirname + '/views/partials/'
 }));
@@ -48,7 +48,28 @@ app.engine('hbs', handlebars({
 // root
 app.get('/', (req, res) => {
     console.log(req.url);
-    res.render('main', { title: 'الصفحة الرئيسية' });
+    con.query(`select * from min_units;`, (err, rows) => {
+        if (err)
+            res.render('main', { title: 'الصفحة الرئيسية' });
+        else {
+            var resultArray = JSON.parse(JSON.stringify(rows));
+            const indxesForArr = Math.ceil(resultArray.length / 4);
+            const indxesArray = [];
+            for (let index = 0; index < resultArray.length; index += 4) {
+                let minArr = resultArray.slice(index, index + 4);
+                let obj = { units: minArr };
+                indxesArray.push(obj);
+                console.log(minArr)
+            }
+            for (let index = 0; index < indxesForArr; index++) {
+                indxesArray[index]['index'] = index;
+            }
+            console.log(indxesArray);
+            res.render('main', { title: 'الصفحة الرئيسية', ir: indxesArray });
+
+        }
+    });
+
 });
 // about
 app.get('/about', (req, res) => {
@@ -200,9 +221,23 @@ app.get('/annualreports', (req, res) => {
         if (err)
             res.render('annualreports', { title: 'التقارير السنوية ', page: 'التخطيط و المتابعة', parent: 'الرئيسية' });
         else {
+
             var resultArray = JSON.parse(JSON.stringify(rows));
-            console.log(resultArray);
-            res.render('annualreports', { title: 'التقارير السنوية', page: 'التخطيط و المتابعة', parent: 'الرئيسية', goals: resultArray, listExists: true });
+            const indxesForArr = Math.ceil(resultArray.length / 4);
+            const indxesArray = [];
+            for (let index = 0; index < resultArray.length; index += 4) {
+                let minArr = resultArray.slice(index, index + 4);
+                let obj = { units: minArr };
+                indxesArray.push(obj);
+                console.log(minArr)
+            }
+            for (let index = 0; index < indxesForArr; index++) {
+                indxesArray[index]['index'] = index;
+            }
+            console.log(indxesArray);
+
+            // console.log(indxesArray, resultArray);
+            res.render('annualreports', { title: 'التقارير السنوية', page: 'التخطيط و المتابعة', parent: 'الرئيسية', ir: indxesArray, listExists: true });
         }
     });
 });
