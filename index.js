@@ -2,6 +2,7 @@ const express = require('express');
 const handlebars = require('express-handlebars');
 const mysql = require('mysql');
 const slash = require('express-slash');
+const Joi = require('joi');
 
 const con = mysql.createConnection({
     host: "localhost",
@@ -342,22 +343,40 @@ app.get('/contactus', (req, res) => {
 });
 // handling contacus request
 app.post('/contactus', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
 
     // destructaring data from submitted form
     const { fname, lname, email, phone, address, city, village, postal, topic, message } = req.body;
-    // insert into database
-    con.query(`INSERT into contact_us (fname,lname,email,phone,address,city,village,postal,topic,message) VALUES 
-        ('${fname}','${lname}','${email}','${phone}','${address}','${city}','${village}','${postal}','${topic}','${message}');
-        `, (err, result) => {
-        if (err) {
-            console.log(err.message);
-            res.status(304).send(err.message)
-        } else {
-            console.log(result);
-            res.status(200).redirect('back');
-        }
+    const schema = Joi.object({
+        fname: Joi.string().alphanum().min(2).max(15).required(),
+        lname: Joi.string().alphanum().min(2).max(15).required(),
+        email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com'] } }),
+        phone: Joi.number().integer().positive().required(),
+        address: Joi.string().required(),
+        city: Joi.string().required(),
+        village: Joi.string().required(),
+        postal: Joi.number().integer().required(),
+        topic: Joi.string().required(),
+        message: Joi.string().required()
     });
+    const validationResult = schema.validate(req.body);
+    if (validationResult.error) {
+        res.status(400).send(validationResult.error.details[0].message);
+    } else {
+        // insert into database
+        con.query(`INSERT into contact_us (fname,lname,email,phone,address,city,village,postal,topic,message) VALUES 
+('${fname}','${lname}','${email}','${phone}','${address}','${city}','${village}','${postal}','${topic}','${message}');
+`, (err, result) => {
+            if (err) {
+                console.log(err.message);
+                res.status(400).send(err.message)
+            } else {
+                // console.log(result);
+                res.status(200).send('Success');
+            }
+        });
+    }
+
 });
 // trainstudents queription
 app.get('/trainstudents', (req, res) => {
