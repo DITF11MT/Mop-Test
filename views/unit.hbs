@@ -1,0 +1,77 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/                    
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <section style="background-color: #F2F4F9;">
+            <div class="container">
+                <div class="row bia">
+                    <div class="sec-item">
+                        {{#if resExists}}
+                        <h2 style="text-align: right;"> المهام و المسؤوليات</h2>
+                      <p>
+                          {{#each unit}}
+                                    <div class="ans" style="text-align: right;">
+                                        {{{res_text}}}
+                                    </div>
+                                    {{/each}}
+                      </p>
+                      {{/if}}
+                      {{#if chartExists}}
+                            {{#each unit}}
+                      <h2 style="text-align: right;">الهيكل التنظيمي</h2>
+                        <a href="units_pics/{{chart_url}}" target="_blank"><img src="units_pics/{{chart_url}}" class="img-fluid big-img" alt="{{unit_name}}" style="margin: 25px 0px;"></a>                        
+                        {{/each}}
+                        {{/if}}  
+                            {{#each unit}}
+                      <div class="contacts">
+                            <div class="contact-item">
+                                <h3>
+                                    المدير
+                                </h3>
+                                <p>
+                                    {{dir_name}} 
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>
+                                    البريد الالكتروني	
+                                </h3>
+                                <p>
+                                    {{dir_email}}
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>
+                                    الرقم الفرعي
+                                </h3>
+                                <p>
+                                    {{dir_tel}}
+                                </p>
+                            </div>
+                        </div>
+                            {{/each}}
+                        
+                      
+                    </div>
+                </div>
+                {{>fillerRow}}
+            </div>
+        </section>

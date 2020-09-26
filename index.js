@@ -71,6 +71,32 @@ app.get('/', (req, res) => {
     });
 
 });
+// unit
+app.get('/unit', (req, res) => {
+    con.query(`SELECT min_units.unit_id,min_units.unit_name,unit_orga_chart.chart_url,hr_directors.dir_name,hr_directors.dir_tel,hr_directors.dir_email,unit_responsibilities.res_text
+    from min_units,hr_directors,unit_orga_chart,unit_responsibilities 
+    where min_units.unit_id=unit_orga_chart.unit_id and 
+    min_units.director_id=hr_directors.dir_num and 
+    unit_responsibilities.unit_id=min_units.unit_id and 
+    min_units.unit_id='${req.query.id}'    
+    ;`, (err, rows) => {
+        if (err)
+            res.render('unit', { title: 'المديرية', parent: 'الرئيسية' });
+        else {
+            var resultArray = JSON.parse(JSON.stringify(rows));
+            if (resultArray[0] == undefined)
+                res.redirect('/');
+            else {
+                console.log(resultArray);
+                let charExists = resultArray[0].chart_url != null;
+                let resExists = resultArray[0].res_text != null;
+                let dirExists = resultArray[0].dir_name != null;
+                console.log(charExists)
+                res.render('unit', { title: resultArray[0].unit_name, parent: 'الرئيسية', unit: resultArray, chartExists: charExists, resExists: resExists, dirExists: dirExists });
+            }
+        }
+    });
+});
 // about
 app.get('/about', (req, res) => {
     console.log(req.url);
@@ -78,7 +104,7 @@ app.get('/about', (req, res) => {
 });
 // news
 app.get('/news', (req, res) => {
-    console.log('where ever you are!');
+    console.log(req.url);
     con.query('SELECT * from sa_news order by news_id desc', (err, rows, fields) => {
         if (err) {
             console.log(err.message)
@@ -89,6 +115,18 @@ app.get('/news', (req, res) => {
 
         }
     })
+});
+// newsarticle
+app.get('/newsarticle', (req, res) => {
+    console.log(req.query)
+    con.query(`select * from sa_news where news_id='${req.query.id}';`, (err, rows) => {
+        if (err)
+            res.redirect('news')
+        else {
+            var resultArray = JSON.parse(JSON.stringify(rows));
+            res.render('newsarticle', { title: resultArray[0].news_tit, page: 'الأخبار', parent: 'الرئيسية', article: resultArray });
+        }
+    });
 });
 // faq
 app.get('/faq', (req, res) => {

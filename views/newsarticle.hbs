@@ -1,0 +1,51 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="#">
+                            {{!-- الرئيسية --}}
+                            {{parent}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#">
+                            {{page}}
+                            {{!-- عن الوزارة --}}
+                        </a>
+                    </h4>/
+                    <h4>
+                        <a href="#" class="currentpage">
+                            {{title}}
+                            {{!-- نبذة عن الوزارة --}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <section style="background-color: #F2F4F9;">
+            <div class="container">
+                <div class="row bia" style="text-align: right;">
+                    <div class="sec-item">
+                
+                {{#each article}}
+                <p>
+                    {{news_date}}
+                </p>
+                <p>
+                    {{news_info}}  
+                </p>
+                <p>
+                    {{news_txt}}
+                </p>
+                <img src="news{{news_id}}.jpg" class="img-fluid big-img" alt="news">
+                {{/each}}
+                </div>
+                </div>
+                {{>fillerRow}}
+                </div>
+            </div>
+        </section>
