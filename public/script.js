@@ -7,7 +7,6 @@ $(document).ready(function() {
     $(".btn").click(function() {
         $("#myModal").modal('show');
     });
-
     $("#idForm").submit(async function(e) {
 
         e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -28,10 +27,12 @@ $(document).ready(function() {
                 if (data.status == 200) {
                     console.log('200 Ya mAN!');
                     modalTitle.innerText = 'تم ارسال طلبك بنجاح!';
+                    $("#modalBody").hide();
                     $("#myModal").modal('show');
                     $("#idForm").trigger("reset");
                 } else {
                     modalTitle.innerText = 'حدث خطأ ما! اعد ارسال طلبك.';
+                    $("#modalBody").show();
                     $("#myModal").modal('show');
                     console.log('not 200 ya karate!');
                 }

@@ -34,7 +34,7 @@ app.set('view engine', 'hbs');
 //Sets handlebars configurations (we will go through them later on)
 
 // static folders
-app.use(express.static('styles'));
+app.use(express.static('public'));
 app.use(express.static('assets'));
 app.use(express.static('files'));
 
@@ -412,19 +412,38 @@ app.post('/train', (req, res) => {
     console.log(req.body);
     // destructaring data from submitted form
     const { nationality, nationalno, birth_day, fname, lname, city, university, year, major, email, phone } = req.body;
-    // insert into database
-    con.query(
-        `INSERT into es_train_students (nationality,nationalno,birth_day,fname,lname,city,university,year,major,email,phone)
+    const schema = Joi.object({
+        nationality: Joi.number().integer().min(1).required(),
+        nationalno: Joi.string().alphanum().min(2).max(15).required(),
+        birth_day: Joi.date().less('1-1-2001').required(),
+        fname: Joi.string().alphanum().min(2).max(15).required(),
+        lname: Joi.string().alphanum().min(2).max(15).required(),
+        city: Joi.string().required(),
+        university: Joi.number().integer().min(1).required(),
+        year: Joi.number().integer().required(),
+        major: Joi.string().alphanum().min(2).max(20).required(),
+        email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com'] } }),
+        phone: Joi.number().integer().positive().required()
+    });
+    const validationResult = schema.validate(req.body);
+    if (validationResult.error) {
+        console.log(validationResult.error.details[0].message);
+        res.status(400).send(validationResult.error.details[0].message);
+    } else {
+        // insert into database
+        con.query(
+            `INSERT into es_train_students (nationality,nationalno,birth_day,fname,lname,city,university,year,major,email,phone)
      VALUES 
      ('${nationality}','${nationalno}','${birth_day}','${fname}','${lname}','${city}','${university}','${year}','${major}','${email}','${phone}');`, (err, result) => {
-            if (err) {
-                console.log(err.message);
-                res.status(304).send(err.message)
-            } else {
-                console.log(result);
-                res.status(200).redirect('back');
-            }
-        });
+                if (err) {
+                    console.log(err.message);
+                    res.status(304).send(err.message)
+                } else {
+                    console.log(result);
+                    res.status(200).redirect('back');
+                }
+            });
+    }
 });
 // scholarships
 app.get('/scholarships', (req, res) => {
@@ -460,19 +479,38 @@ app.post('/scholarship', (req, res) => {
     console.log(req.body);
     // destructaring data from submitted form
     const { fname, sname, lname, nationality, nationalno, birth_day, scholarship, degree, major, email, phone } = req.body;
-    // insert into database
-    con.query(`
+    const schema = Joi.object({
+        fname: Joi.string().min(2).max(15).required(),
+        sname: Joi.string().min(2).max(15).required(),
+        lname: Joi.string().min(2).max(15).required(),
+        nationality: Joi.number().integer().min(1).required(),
+        nationalno: Joi.string().alphanum().min(2).max(15).required(),
+        birth_day: Joi.date().less('1-1-2001').required(),
+        scholarship: Joi.number().integer().min(1).required(),
+        degree: Joi.number().integer().min(1).required(),
+        major: Joi.string().min(2).max(20).required(),
+        email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com'] } }),
+        phone: Joi.number().integer().positive().required()
+    });
+    const validationResult = schema.validate(req.body);
+    if (validationResult.error) {
+        console.log(validationResult.error.details[0].message);
+        res.status(400).send(validationResult.error.details[0].message);
+    } else {
+        // insert into database
+        con.query(`
     INSERT into es_students_scholarships (fname,sname,lname,nationality,nationalno,birth_day,scholarship,degree,major,email,phone)
     VALUES ('${fname}','${sname}','${lname}','${nationality}','${nationalno}','${birth_day}','${scholarship}','${degree}','${major}','${email}','${phone}');
     `, (err, result) => {
-        if (err) {
-            console.log(err.message);
-            res.status(400).send(err.message);
-        } else {
-            console.log(result);
-            res.status(200).redirect('back');
-        }
-    });
+            if (err) {
+                console.log(err.message);
+                res.status(400).send(err.message);
+            } else {
+                console.log(result);
+                res.status(200).redirect('back');
+            }
+        });
+    }
 });
 // newsletter
 app.get('/newsletter', (req, res) => {
@@ -484,17 +522,26 @@ app.post('/newsletter', (req, res) => {
     console.log(req.body);
     // destructaring data from submitted form
     const { email } = req.body;
-    // insert into database
-    con.query(`INSERT into es_news_letter (email) VALUES ('${email}');`, (err, result) => {
-        if (err) {
-            console.log(err.message);
-            res.status(304).send(err.message)
-        } else {
-            // console.log(result);
-            res.status(200).send('success');
-            // .redirect('back');
-        }
-    });
+    const schema = Joi.object({
+        email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com'] } })
+    })
+    const validationResult = schema.validate(req.body);
+    if (validationResult.error) {
+        console.log(validationResult.error.details[0].message);
+        res.status(400).send(validationResult.error.details[0].message);
+    } else {
+        // insert into database
+        con.query(`INSERT into es_news_letter (email) VALUES ('${email}');`, (err, result) => {
+            if (err) {
+                console.log(err.message);
+                res.status(304).send(err.message)
+            } else {
+                // console.log(result);
+                res.status(200).send('success');
+                // .redirect('back');
+            }
+        });
+    }
 });
 
 app.listen(port, () => console.log(`App listening to port ${port}`));
