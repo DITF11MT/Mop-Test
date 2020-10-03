@@ -545,3 +545,8 @@ app.post('/newsletter', (req, res) => {
 });
 
 app.listen(port, () => console.log(`App listening to port ${port}`));
+
+// handling 404
+app.use((req, res) => {
+    res.status(404).redirect('/');
+});

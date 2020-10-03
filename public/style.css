@@ -170,7 +170,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     color: snow;
-    font-size: .88em;
+    font-size: .88em !important;
 }
 
 .eservices a {
@@ -195,7 +195,8 @@ body {
 }
 
 .eservices h4 {
-    font-size: 1.1em;
+    font-size: .98em;
+    font-weight: 1000;
 }
 
 .fb:hover {
@@ -213,7 +214,7 @@ body {
 .info {
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.69);
     text-align: right;
     box-shadow: 2px 2px 6px 0 rgba(32, 33, 36, 0.44);
     border-radius: 5px;
@@ -225,8 +226,9 @@ body {
 }
 
 .info p {
-    color: black;
+    color: snow;
     font-size: 1.1em;
+    font-family: 'system-ui';
 }
 
 .info a {
@@ -342,7 +344,7 @@ nav li:hover:after {
 }
 
 .slide-show h1 {
-    color: black;
+    color: snow;
     font-size: 1.8em;
 }
 
@@ -1001,7 +1003,7 @@ footer {
     background-color: #00838F;
     display: flex;
     justify-content: space-between;
-    padding: 10px 44px;
+    padding: 10px 20px;
 }
 
 footer a {
@@ -1051,6 +1053,7 @@ footer h2 {
 .items h4 {
     font-size: 1.1em;
     padding: 10px 0;
+    text-align: end;
 }
 
 .cr {

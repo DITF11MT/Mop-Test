@@ -1,9 +1,10 @@
-// $(window).on('load', function() {
-//     $('#overlay').fadeOut();
+$(window).on('load', function() {
+    $('#overlay').fadeOut();
+});
 
-// });
 
 $(document).ready(function() {
+
     $(".btn").click(function() {
         $("#myModal").modal('show');
     });
