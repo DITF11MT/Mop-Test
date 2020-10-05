@@ -1,0 +1,47 @@
+<div class="container">
+            <div class="page-title">
+                <h3>
+                    {{title}}
+                </h3>
+                <div class="navilinks">
+                    <h4>
+                        <a href="/">                            
+                            {{parent}}
+                        </a>
+                    </h4>
+                    <h4>
+                        <a href="gallery" class="na">
+                            {{page}}                            
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <section style="background-color: #F2F4F9;">
+            <div class="container">
+                <div class=" bia" style="text-align: right; text-justify: auto;">
+                    <div class="sec-item">
+                        {{!-- <p style="text-align: justify;">4/7/2020- افتتح وزير التخطيط والتعاون الاجتماع الثاني لفريق عمل الأردن (Jordan Taskforce) لمتابعة نتائج مبادرة مؤتمر ‏لندن، والذي تم عقده برئاسة أردنية بريطانية مشتركة وعبر تقنية الاتصال المرئي.</p>
+                <div class="row albumP" style="text-align: center;">
+                    <div class="col-xs-10 col-sm-6 col-lg-4"><a href="firstimg.jpeg" target="_blanck"><img src="firstimg.jpeg" alt=""></a></div>
+                    <div class="col-xs-10 col-sm-6 col-lg-4"><a href="firstimg2.jpeg" target="_blanck"><img src="firstimg2.jpeg" alt=""></a></div>
+                </div> --}}
+                {{#each album}}
+                {{{media_url}}}
+                {{/each}}
+{{!--                
+                {{#each project}}                            
+                <p>
+                    {{{project_txt}}}
+                    {{#if project_url}}
+                     <span class="projectLink"><a href="{{project_url}}" target="_blanck">للمزيد عن المبادرة.</a></span>
+                     {{/if}}
+                </p>                
+                {{/each}} --}}
+                </div>
+                </div>
+                {{>fillerRow}}
+                </div>
+            </div>
+        </section>

@@ -125,7 +125,10 @@ app.get('/newsarticle', (req, res) => {
             res.redirect('news')
         else {
             var resultArray = JSON.parse(JSON.stringify(rows));
-            res.render('newsarticle', { title: resultArray[0].news_tit, page: 'الأخبار', parent: 'الرئيسية', article: resultArray });
+            if (resultArray[0] == undefined) {
+                res.redirect('news')
+            } else
+                res.render('newsarticle', { title: resultArray[0].news_tit, page: 'الأخبار', parent: 'الرئيسية', article: resultArray });
         }
     });
 });
@@ -296,6 +299,22 @@ app.get('/projectsandinitiaves', (req, res) => {
     });
 
 });
+// project
+app.get('/project', (req, res) => {
+    console.log(req.query)
+    con.query(`select * from sa_projects where project_id='${req.query.id}';`, (err, rows) => {
+        if (err)
+            res.redirect('projectsandinitiaves')
+        else {
+            var resultArray = JSON.parse(JSON.stringify(rows));
+            if (resultArray[0] == undefined)
+                res.redirect('projectsandinitiaves');
+            else {
+                res.render('project', { title: resultArray[0].project_tit, page: 'المبادرات', parent: 'الرئيسية', project: resultArray });
+            }
+        }
+    });
+});
 // gallery
 app.get('/gallery', (req, res) => {
     console.log(req.url);
@@ -312,6 +331,22 @@ app.get('/gallery', (req, res) => {
     });
 
 });
+// album
+app.get('/album', (req, res) => {
+    console.log(req.query)
+    con.query(`select * from sa_media where media_id='${req.query.id}';`, (err, rows) => {
+        if (err)
+            res.redirect('gallery')
+        else {
+            var resultArray = JSON.parse(JSON.stringify(rows));
+            if (resultArray[0] == undefined) {
+                res.redirect('gallery')
+            } else
+                res.render('album', { title: resultArray[0].media_tit, page: 'المعرض', parent: 'الرئيسية', album: resultArray });
+        }
+    });
+});
+
 // usefullinks
 app.get('/usefullinks', (req, res) => {
     console.log(req.url);

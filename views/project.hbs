@@ -10,30 +10,26 @@
                         </a>
                     </h4>/
                     <h4>
-                        <a href="news">
+                        <a href="projectsandinitiaves">
                             {{page}}                            
                         </a>
-                    </h4>                    
+                    </h4>
                 </div>
             </div>
         </div>
 
         <section style="background-color: #F2F4F9;">
             <div class="container">
-                <div class="row bia" style="text-align: right;">
+                <div class="row bia" style="text-align: right; text-justify: auto;">
                     <div class="sec-item" style="text-align: justify;">
                 
-                {{#each article}}
+                {{#each project}}                            
                 <p>
-                    {{news_date}}
-                </p>
-                <p>
-                    {{news_info}}  
-                </p>
-                <p>
-                    {{news_txt}}
-                </p>
-                <img src="news{{news_id}}.jpg" class="img-fluid big-img" alt="news">
+                    {{{project_txt}}}
+                    {{#if project_url}}
+                     <span class="projectLink"><a href="{{project_url}}" target="_blanck">للمزيد عن المبادرة.</a></span>
+                     {{/if}}
+                </p>                
                 {{/each}}
                 </div>
                 </div>

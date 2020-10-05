@@ -5,21 +5,18 @@
                 </h3>
                 <div class="navilinks">
                     <h4>
-                        <a href="#">
-                            {{!-- الرئيسية --}}
+                        <a href="/">                            
                             {{parent}}
                         </a>
-                    </h4>/
+                    </h4>
                     <h4>
                         <a href="#">
-                            {{page}}
-                            {{!-- عن الوزارة --}}
+                            {{page}}                            
                         </a>
-                    </h4>/
+                    </h4>
                     <h4>
-                        <a href="#" class="currentpage">
-                            {{title}}
-                            {{!-- نبذة عن الوزارة --}}
+                        <a href="#" class="currentpage na">
+                            {{title}}                            
                         </a>
                     </h4>
                 </div>
@@ -34,7 +31,7 @@
                           {{#each media}}
     
                        <div class="col-xs-8 col-sm-6 col-lg-4">
-                            <a href="#">
+                            <a href="album?id={{media_id}}">
                                 <div class="news">
                                     <img src="{{media_pic}}" alt="{{media_tit}}">
                                     <h2>
@@ -43,7 +40,7 @@
                                     <p>
                                         {{media_txt}}
                                     </p>
-                                    <a href="#">عرض الألبوم</a>
+                                    <a href="album?id={{media_id}}">عرض الألبوم</a>
                                 </div>
                             </a>
                         </div>

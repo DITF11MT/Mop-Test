@@ -41,9 +41,14 @@ body {
     line-height: 2;
 }
 
-.article a {
+.article a,
+.projectLink a {
     text-decoration: none;
     color: #00838F;
+}
+
+.projectLink a:hover {
+    color: #006973;
 }
 
 .article a:hover {
@@ -52,6 +57,26 @@ body {
 
 .article ul li {
     list-style-type: disc;
+}
+
+.albumP {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.albumP img {
+    width: 95%;
+    height: 250px;
+    margin: 10px 0px;
+    border: 4px solid snow;
+    border-radius: 4px;
+    box-shadow: 1px 1px rgba(32, 33, 36, 0.28);
+    transition: all .3s;
+}
+
+.albumP img:hover {
+    box-shadow: 2px 4px 6px rgba(32, 33, 36, 0.28);
 }
 
 .pdimg {
@@ -330,7 +355,7 @@ nav li:hover:after {
 
 .dropdown-menu {
     width: 100%;
-    box-shadow: 2px 2px #444;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28)
 }
 
 .dropdown-item {
@@ -386,6 +411,11 @@ nav li:hover:after {
     font-size: .8em;
     text-decoration: none;
     margin: 0px 8px;
+}
+
+.navilinks a::after {
+    margin-right: 4px;
+    content: "/";
 }
 
 .currentpage {
@@ -662,12 +692,13 @@ nav li:hover:after {
     color: snow !important;
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     transition: all .3s;
+    border: 1px solid transparent;
 }
 
 .p a:hover {
-    padding: 10px 20px;
-    background-color: #006973;
-    font-size: 1.1em;
+    background-color: snow;
+    color: #00838F !important;
+    border: 1px solid #ccc;
 }
 
 .banner {
