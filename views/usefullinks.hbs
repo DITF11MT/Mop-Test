@@ -5,15 +5,13 @@
                 </h3>
                 <div class="navilinks">
                     <h4>
-                        <a href="#">
-                            {{!-- الرئيسية --}}
+                        <a href="/">                            
                             {{parent}}
                         </a>
-                    </h4>/                    
+                    </h4>          
                     <h4>
-                        <a href="#" class="currentpage">
-                            {{title}}
-                            {{!-- نبذة عن الوزارة --}}
+                        <a href="#" class="currentpage na">
+                            {{title}}                         
                         </a>
                     </h4>
                 </div>
@@ -31,7 +29,7 @@
                           {{#if listExists}}
                             {{#each links}}
                           <li>
-                              <a href="{{link_url}}">
+                              <a href="{{link_url}}" target="_blanck">
                                 <p>
                                 {{link_tit}}       
                                 </p>

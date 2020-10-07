@@ -6,14 +6,13 @@
                 <div class="navilinks">
                     <h4>
                         <a href="#">
-                            {{!-- الرئيسية --}}
+                         
                             {{parent}}
                         </a>
-                    </h4>/                    
+                    </h4>                   
                     <h4>
-                        <a href="#" class="currentpage">
-                            {{title}}
-                            {{!-- نبذة عن الوزارة --}}
+                        <a href="#" class="currentpage na">
+                            {{title}}                            
                         </a>
                     </h4>
                 </div>
@@ -28,7 +27,7 @@
                         <h2 style="text-align: right;"> المهام و المسؤوليات</h2>
                       <p>
                           {{#each unit}}
-                                    <div class="ans" style="text-align: right;">
+                                    <div class="ans">
                                         {{{res_text}}}
                                     </div>
                                     {{/each}}

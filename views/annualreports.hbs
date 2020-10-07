@@ -5,21 +5,18 @@
                 </h3>
                 <div class="navilinks">
                     <h4>
-                        <a href="#">
-                            {{!-- الرئيسية --}}
+                        <a href="/">                            
                             {{parent}}
                         </a>
-                    </h4>/
+                    </h4>
                     <h4>
                         <a href="#">
                             {{page}}
-                            {{!-- عن الوزارة --}}
                         </a>
-                    </h4>/
+                    </h4>
                     <h4>
-                        <a href="#" class="currentpage">
-                            {{title}}
-                            {{!-- نبذة عن الوزارة --}}
+                        <a href="#" class="currentpage na">
+                            {{title}}                            
                         </a>
                     </h4>
                 </div>
@@ -42,7 +39,7 @@
                             <div class="carousel-item {{#if @first}}active{{/if}}">
                             <div class="row">
                                 {{#each [units]}}
-                                    <div class="col-3">
+                                    <div class="col-xs-6 col-sm-4 col-lg-3">
                                     <div class="unit">
                                         <img src="{{this.file_ext}}.png" alt="program">
                                 <h5>{{file_name}} {{this.file_date}}</h5>

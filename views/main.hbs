@@ -19,9 +19,9 @@
                         <div class="carousel-item {{#if @first}}active{{/if}}">
                             <div class="row">
                                 {{#each [units]}}
-                                <div class="col-3">
+                                <div class="col-xs-6 col-sm-4 col-lg-3">
                                     <a href="/unit?id={{this.unit_id}}" class="unita">
-                                        <div class="unit">
+                                        <div class="unit" style="height: 90%;">
                                             <img src="crown.png" alt="">
                                             <h5> {{this.unit_name}}</h5>
                                         </div>

@@ -5,21 +5,18 @@
                 </h3>
                 <div class="navilinks">
                     <h4>
-                        <a href="#">
-                            {{!-- الرئيسية --}}
+                        <a href="/">                         
                             {{parent}}
                         </a>
-                    </h4>/
+                    </h4>
                     <h4>
                         <a href="#">
-                            {{page}}
-                            {{!-- عن الوزارة --}}
+                            {{page}}                         
                         </a>
-                    </h4>/
+                    </h4>
                     <h4>
-                        <a href="#" class="currentpage">
-                            {{title}}
-                            {{!-- نبذة عن الوزارة --}}
+                        <a href="#" class="currentpage na">
+                            {{title}}                            
                         </a>
                     </h4>
                 </div>
@@ -28,7 +25,9 @@
 <section style="background-color: #FFF;">
             <div class="container">
                 <div class="row bia" style="justify-content: center;"> ​
-                    <a href="organizational-chart.jpg" target="_blank"><img src="organizational-chart.jpg" class="img-fluid big-img" alt="organizational-chart" style="margin: 25px 0px;"></a>
+                    <div class="col">
+                        <a href="organizational-chart.jpg" target="_blank"><img src="organizational-chart.jpg" class="img-fluid big-img" alt="organizational-chart" style="margin: 25px 0px; width: 100%;"></a>
+                    </div>
                 </div>
                 {{>fillerRow}}
             </div>

@@ -5,21 +5,18 @@
                 </h3>
                 <div class="navilinks">
                     <h4>
-                        <a href="#">
-                            {{!-- الرئيسية --}}
+                        <a href="/">                         
                             {{parent}}
                         </a>
-                    </h4>/
+                    </h4>
                     <h4>
                         <a href="#">
-                            {{page}}
-                            {{!-- عن الوزارة --}}
+                            {{page}}                         
                         </a>
-                    </h4>/
+                    </h4>
                     <h4>
-                        <a href="#" class="currentpage">
-                            {{title}}
-                            {{!-- نبذة عن الوزارة --}}
+                        <a href="#" class="currentpage na">
+                            {{title}}                            
                         </a>
                     </h4>
                 </div>
@@ -33,7 +30,7 @@
   
                           {{#each programs}}
     
-                        <div class="col-xs-8 col-sm-6 col-lg-3">
+                        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
                             <div class="plan">
                                 <img src="{{file_ext}}.png" alt="program">
                                 <h2>{{file_name}} {{file_date}}</h2>
