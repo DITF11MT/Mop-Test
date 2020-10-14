@@ -182,7 +182,7 @@ app.get('/ministers', (req, res) => {
     con.query(`
     SELECT hr_min_pictures.picture_url,hr_ministers.min_s_date,hr_ministers.min_e_date,hr_ministers.min_name 
 FROM hr_ministers
-INNER JOIN hr_min_pictures ON hr_ministers.minister_id=hr_min_pictures.minister_id;`,
+INNER JOIN hr_min_pictures ON hr_ministers.minister_id=hr_min_pictures.minister_id order by hr_ministers.minister_id desc;`,
         (err, rows) => {
             if (err)
                 res.render('ministers', { title: ' الوزراء السابقين ', page: 'عن الوزارة ', parent: 'الرئيسية' });
@@ -449,14 +449,14 @@ app.post('/train', (req, res) => {
     const { nationality, nationalno, birth_day, fname, lname, city, university, year, major, email, phone } = req.body;
     const schema = Joi.object({
         nationality: Joi.number().integer().min(1).required(),
-        nationalno: Joi.string().alphanum().min(2).max(15).required(),
+        nationalno: Joi.string().alphanum().min(10).max(10).required(),
         birth_day: Joi.date().less('1-1-2001').required(),
-        fname: Joi.string().alphanum().min(2).max(15).required(),
-        lname: Joi.string().alphanum().min(2).max(15).required(),
+        fname: Joi.string().min(2).max(15).required(),
+        lname: Joi.string().min(2).max(15).required(),
         city: Joi.string().required(),
         university: Joi.number().integer().min(1).required(),
         year: Joi.number().integer().required(),
-        major: Joi.string().alphanum().min(2).max(20).required(),
+        major: Joi.string().min(2).max(20).required(),
         email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com'] } }),
         phone: Joi.number().integer().positive().required()
     });
@@ -519,7 +519,7 @@ app.post('/scholarship', (req, res) => {
         sname: Joi.string().min(2).max(15).required(),
         lname: Joi.string().min(2).max(15).required(),
         nationality: Joi.number().integer().min(1).required(),
-        nationalno: Joi.string().alphanum().min(2).max(15).required(),
+        nationalno: Joi.string().alphanum().min(10).max(10).required(),
         birth_day: Joi.date().less('1-1-2001').required(),
         scholarship: Joi.number().integer().min(1).required(),
         degree: Joi.number().integer().min(1).required(),
