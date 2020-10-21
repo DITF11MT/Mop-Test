@@ -27,7 +27,7 @@ app.use(express.urlencoded({
 app.use(router);
 app.use(slash());
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 //Loads the handlebars module
 //Sets our app to use the handlebars engine
 app.set('view engine', 'hbs');
