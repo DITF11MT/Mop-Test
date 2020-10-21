@@ -1,6 +1,7 @@
 # MOP
 
 MOP is my capstone project. It is a result of my training at HTU.
+You can find it here:https://mopaic.herokuapp.com/ but it is not connected to database,so dynamic fetched data is not appearing.
 
 ## Installation
 
