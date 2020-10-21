@@ -4,7 +4,8 @@
   "description": "Testing Purposes",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"deploy": "gh-pages"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "express-slash": "^2.0.1",
+    "gh-pages": "^3.1.0",
     "joi": "^17.2.1",
     "mysql": "^2.18.1"
   }
