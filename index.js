@@ -8,7 +8,7 @@ const con = mysql.createConnection({
     host: "us-cdbr-east-02.cleardb.com",
     user: "bddcf93f062fda",
     password: "b8c562de",
-    database: "mop"
+    database: "heroku_bd1fb1417f7c391"
 });
 
 const app = express();
