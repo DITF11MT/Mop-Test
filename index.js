@@ -5,9 +5,9 @@ const slash = require('express-slash');
 const Joi = require('joi');
 
 const con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "123456",
+    host: "us-cdbr-east-02.cleardb.com",
+    user: "bddcf93f062fda",
+    password: "b8c562de",
     database: "mop"
 });
 
