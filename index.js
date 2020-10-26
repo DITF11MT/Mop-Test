@@ -15,7 +15,12 @@ const con = mysql.createConnection({
 var connection;
 
 function handleDisconnect() {
-  connection = mysql.createConnection(con); // Recreate the connection, since
+  connection = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+}); // Recreate the connection, since
                                                   // the old one cannot be reused.
 
   connection.connect(function(err) {              // The server is either down
