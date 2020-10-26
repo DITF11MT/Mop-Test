@@ -5,10 +5,10 @@ const slash = require('express-slash');
 const Joi = require('joi');
 
 const con = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    host: "us-cdbr-east-02.cleardb.com",
+    user: "bddcf93f062fda",
+    password: "b8c562de",
+    database: "heroku_bd1fb1417f7c391"
 });
 
 const app = express();
