@@ -137,9 +137,9 @@ app.get('/newsarticle', (req, res) => {
 // faq
 app.get('/faq', (req, res) => {
     console.log(req.url);
-    con.query(`SELECT mop.faq_questions.question_tit,mop.faq_answers.answer_txt,mop.faq_answers.answer_bs
-    FROM mop.faq_questions
-    INNER JOIN mop.faq_answers ON mop.faq_answers.question_id=mop.faq_questions.question_id;`, (err, rows) => {
+    con.query(`SELECT faq_questions.question_tit,faq_answers.answer_txt,faq_answers.answer_bs
+    FROM faq_questions
+    INNER JOIN faq_answers ON faq_answers.question_id=faq_questions.question_id;`, (err, rows) => {
         if (err) {
             console.log(err.message);
             res.render('faq', { title: ' الاسئلة الشائعة ', page: 'عن الوزارة ', parent: 'الرئيسية' });
